@@ -12,6 +12,7 @@ export const Links = [
  
  export const Details = {
     name: "Sam Joshua",
+    email:"samjoshuacs2002@gmail.com",
     quotes:"Building Software Which Makes Others Lives Easier",
     about:"I am a dedicated software developer with a strong passion for full-stack development. I have experience creating various personal projects and am always open to learning new technologies or frameworks. I enjoy tackling challenges and am constantly striving to improve my skills."
   };

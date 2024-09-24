@@ -1,4 +1,5 @@
 import React from 'react';
+import { Details } from '../constants/contents';
 
 function Testimonial() {
   return (
@@ -18,7 +19,7 @@ function Testimonial() {
       <figure className="mt-10">
         <blockquote className="text-center text-xl font-semibold leading-8 text-gray-700 sm:text-2xl sm:leading-9">
           <p>
-            “I highly recommend Sam Joshua for successfully delivering a web application integrated with React.js and Tailwind CSS. Their timely work, technical expertise, and effective communication made the project a success. I’m confident they will excel in future endeavors.”
+            “I highly recommend {Details.name} for successfully delivering a web application integrated with React.js and Tailwind CSS. Their timely work, technical expertise, and effective communication made the project a success. I’m confident they will excel in future endeavors.”
           </p>
         </blockquote>
         <figcaption className="mt-10">
