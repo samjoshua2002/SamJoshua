@@ -60,61 +60,56 @@ function Home() {
       </div>
 
       {/* Mobile view */}
-      <div className="lg:hidden max-w-screen mx-auto p-5 ">
-        <div className="grid grid-cols-2  items-center gap-4">
-          {/* Icons */}
-          <div className="flex col-span-2 items-center">
-            <div className="flex flex-col insert-y-0 start-0 left-0 items-center gap-2 text-4xl ">
-              {icons.map((icn) => (
-                <a
-                  key={icn.key}
-                  href={icn.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-center items-center"
-                >
-                  {icn.icon}
-                </a>
-              ))}
-            </div>
+      <div className="lg:hidden max-w-screen mx-auto p-5">
+  <div className="grid grid-cols-1 items-center gap-4">
+    {/* Blob */}
+    <div className="blob flex justify-center items-center mt-5 mb-5">
+      {/* Add your blob content here */}
+    </div>
 
-            {/* Blob */}
-            <div className="blob flex justify-center items-center mt-5 mb-5">
-              {/* Add your blob content here */}
-            </div>
-          </div>
+    {/* Icons in a single row */}
+    <div className="flex justify-center items-center gap-4">
+      {icons.map((icn) => (
+        <a
+          key={icn.key}
+          href={icn.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex justify-center items-center text-4xl"
+        >
+          {icn.icon}
+        </a>
+      ))}
+    </div>
 
-          {/* Text content */}
-          <div className="text-content flex flex-col items-center text-center col-span-2">
-            <h1 className="text-3xl font-semibold">{Details.name}</h1>
-            <p className="text-lg flex gap-2 mt-2">
-              I'm a{" "}
-              <Typewriter
-                options={{
-                  strings: [
-                    "Software Developer",
-                    "Front-end Designer",
-                    "Coder",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </p>
-            <p className="mt-2">{Details.quotes}</p>
-            
-            <a
-              href="/Sam.pdf" // Correct path for a file in the 'public' folder
-              target="_blank" // Opens the file in a new tab (optional, not necessary for download)
-              rel="noopener noreferrer" // Security feature when using target="_blank"
-              download // This ensures that the file is downloaded instead of opened
-              className="flex items-center gap-2 text-lg border border-black p-3 rounded-2xl mt-5 bg-black text-white"
-            >
-              Download Resume <IoDocumentTextOutline />
-            </a>
-          </div>
-        </div>
-      </div>
+    {/* Text content */}
+    <div className="text-content flex flex-col items-center text-center">
+      <h1 className="text-3xl font-semibold">{Details.name}</h1>
+      <p className="text-lg flex gap-2 mt-2">
+        I'm a{" "}
+        <Typewriter
+          options={{
+            strings: ["Software Developer", "Front-end Designer", "Coder"],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </p>
+      <p className="mt-2">{Details.quotes}</p>
+
+      <a
+        href="/Sam.pdf" // Correct path for a file in the 'public' folder
+        target="_blank" // Opens the file in a new tab (optional, not necessary for download)
+        rel="noopener noreferrer" // Security feature when using target="_blank"
+        download // This ensures that the file is downloaded instead of opened
+        className="flex items-center gap-2 text-lg border border-black p-3 rounded-2xl mt-5 bg-black text-white"
+      >
+        Download Resume <IoDocumentTextOutline />
+      </a>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }
