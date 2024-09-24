@@ -1,39 +1,8 @@
 import React from 'react'
-import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt, FaGithub } from 'react-icons/fa';
-import {  SiMysql, SiSpring, SiPostman } from 'react-icons/si';
+import { info } from '../constants/contents';
 
 function Skills() {
-    const info = [
-        {
-            title: 'Languages',
-            content: [
-                { icon: <FaHtml5 />, name: 'HTML' },
-                { icon: <FaCss3Alt />, name: 'CSS' },
-                { icon: <FaJs />, name: 'JavaScript' },
-               
-                { icon: <FaJava />, name: 'Java' },
-                { icon: <SiMysql />, name: 'MySQL' }
-              
-            ]
-        },
-        {
-            title: 'Frameworks',
-            content: [
-                { icon: <SiSpring/>, name: 'Spring' },
-                { icon: <FaReact />, name: 'React.js' },
-                { icon: <FaNodeJs />, name: 'Node.js' }
-            ]
-        },
-        {
-            title: 'Tools',
-            content: [
-                { icon: <FaGitAlt />, name: 'Git' },
-                { icon: <FaGithub />, name: 'Github' },
-                { icon: <SiPostman />, name: 'Postman' },
-                
-            ]
-        }
-    ]
+    
 
     return (
         <div className='max-w-screen-lg mx-auto p-5'>

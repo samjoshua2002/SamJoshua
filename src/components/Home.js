@@ -95,14 +95,14 @@ function Home() {
           }}
         />
       </p>
-      <p className="mt-2">{Details.quotes}</p>
+      <p className="mt-4">{Details.quotes}</p>
 
       <a
         href="/Sam.pdf" // Correct path for a file in the 'public' folder
         target="_blank" // Opens the file in a new tab (optional, not necessary for download)
         rel="noopener noreferrer" // Security feature when using target="_blank"
         download // This ensures that the file is downloaded instead of opened
-        className="flex items-center gap-2 text-lg border border-black p-3 rounded-2xl mt-5 bg-black text-white"
+        className="flex items-center gap-2 text-lg border border-black p-3 rounded-2xl mt-8 bg-black text-white"
       >
         Download Resume <IoDocumentTextOutline />
       </a>

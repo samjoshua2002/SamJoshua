@@ -15,7 +15,7 @@ function App() {
     <div>
       <Navbar />
       <div>
-        <section id="home" className="py-16">
+        <section id="home" className="py-10">
           <Home />
         </section>
         <section id="about" className="py-20">
