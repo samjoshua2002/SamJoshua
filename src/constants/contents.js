@@ -1,7 +1,6 @@
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
-import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import {  SiMysql, SiSpring, SiPostman } from 'react-icons/si';
+import { SiLeetcode, SiMysql, SiSpring, SiPostman } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt,FaLinkedin, FaGithub  } from 'react-icons/fa';
+
 
 export const Links = [
     { name: "Home", to: 'home' },
