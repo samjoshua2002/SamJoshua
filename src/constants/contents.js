@@ -124,7 +124,7 @@ Programming, and Java App Development modules. `,
       "imgAlt": "",
       "title": "Internship",
       "badge": "ARMTECH COMPUTER SERVICE Pvt. Ltd.",
-      "content": "During my internship at ARMTECH COMPUTER SERVICE, I gained  experience in networking technologies. I learned about network configurations, troubleshooting, and optimizing network performance. ",
+      "content": "During my internship at ARMTECH COMPUTER SERVICE, I gained  experience in networking technologies. I learned about troubleshooting  , network configuration  and optimize network performance.",
       "link": "",
       "linkText": "Certificate Link"
     },
