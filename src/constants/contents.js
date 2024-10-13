@@ -3,12 +3,13 @@ import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt,FaLinkedi
 
 
 export const Links = [
-    { name: "Home", to: 'home' },
-    { name: "About", to: 'about' },
-    { name: "Skills", to: 'skills' },
-    { name: "Project", to: 'project' },
-    { name: "Contact", to: 'contact' },
-  ];
+  { name: "Home", to: 'home' },
+  { name: "About", to: 'about' },
+  { name: "Skills", to: 'skills' },
+  { name: "Projects", to: 'project' },
+  { name: "Contact", to: 'contact' },
+];
+
  
  export const Details = {
     name: "Sam Joshua",

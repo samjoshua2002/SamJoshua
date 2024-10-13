@@ -1,9 +1,8 @@
-// Navbar.js
 import React from "react";
 import { Link } from "react-scroll";
 import { Links } from "./constants/contents";
 import { Details } from "./constants/contents";
-import { Home, User, Briefcase, Mail } from "lucide-react";
+import { Home, User, Briefcase, Mail, Code, Package } from "lucide-react"; // Corrected the icon for Briefcase
 
 export default function Navbar() {
   return (
@@ -57,17 +56,21 @@ export default function Navbar() {
 }
 
 // Function to get the appropriate icon based on the link name
-function getIcon(name: string) {
+function getIcon(name) {
+  console.log("Link name:", name); // Log to see the actual link name
   switch (name.toLowerCase()) {
     case 'home':
-      return <Home className="h-6 w-6" />;
+      return <Home className="h-6 w-6" />; // Home icon
     case 'about':
-      return <User className="h-6 w-6" />;
+      return <User className="h-6 w-6" />; // About (User) icon
     case 'projects':
-      return <Briefcase className="h-6 w-6" />;
+      return <Briefcase className="h-6 w-6" />; // Projects icon (Briefcase)
+    case 'skills':
+      return <Code className="h-6 w-6" />; // Skills icon (Code)
     case 'contact':
-      return <Mail className="h-6 w-6" />;
+      return <Mail className="h-6 w-6" />; // Contact (Mail) icon
     default:
-      return <Home className="h-6 w-6" />;
+      console.warn("No matching icon found for:", name); // Warn when there is no match
+      return <Home className="h-6 w-6" />; // Default to Home icon
   }
 }
