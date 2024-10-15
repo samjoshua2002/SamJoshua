@@ -8,7 +8,7 @@ function Project() {
     <Box className="max-w-screen-lg mx-auto p-5">
       {/* Section title */}
       <Box textAlign="center" mb={5}>
-        <Typography variant="h2" component="h2" fontWeight="bold">
+        <Typography variant="h4" component="h4" fontWeight="bold">
           Certifications
         </Typography>
         <Typography variant="subtitle1" color="textSecondary" mt={2}>
