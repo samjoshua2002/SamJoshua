@@ -1,11 +1,7 @@
 import { SiLeetcode, SiMysql, SiSpring, SiPostman } from 'react-icons/si';
 import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt,FaLinkedin, FaGithub  } from 'react-icons/fa';
+import { SiPython } from 'react-icons/si'; 
 
-
-import { DiFlutter } from 'react-icons/di'; // Import Flutter icon
-import { SiPython } from 'react-icons/si';   // Import Python icon
-import { DiDart } from 'react-icons/di';      // Import Dart icon
-import { SiC } from 'react-icons/si';          // Import C icon
 
 export const Links = [
   { name: "Home", to: 'home' },

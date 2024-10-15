@@ -4,9 +4,11 @@ import { cardData } from '../constants/contents';
 import { Box, Typography, Card, CardContent, CardMedia, Button, Grid } from '@mui/material';
 
 function Project() {
+
+  
   return (
     <Box className="max-w-screen-lg mx-auto p-5">
-      {/* Section title */}
+      
       <Box textAlign="center" mb={5}>
         <Typography variant="h4" component="h4" fontWeight="bold">
           Certifications
