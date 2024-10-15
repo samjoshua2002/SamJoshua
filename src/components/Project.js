@@ -27,7 +27,7 @@ function Project() {
                 component="img"
                 src={card.imgSrc}
                 alt={card.imgAlt}
-                sx={{ bgcolor: 'black', width: 100, height: 100, marginBottom: 2, borderRadius: '12px' }}
+                sx={{ bgcolor: 'black', width: 100, height: 100, marginBottom: 2, marginLeft:2, borderRadius: '12px' }}
               />
 
               <CardContent>

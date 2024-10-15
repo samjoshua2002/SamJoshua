@@ -1,5 +1,7 @@
 import React from 'react';
 import { info } from '../constants/contents';
+import { Card, CardContent, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 function Skills() {
     return (
@@ -10,44 +12,74 @@ function Skills() {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-4'>
-               
-                <div className='border border-gray-300 w-full p-5 rounded-2xl shadow-md mx-auto'>
-                    <h3 className='text-center font-bold text-gray-700 mb-5'>{info[0].title}</h3>
-                    <div className='grid grid-cols-2 justify-center gap-x-6 gap-y-4 ml-9'>
-                        {info[0].content.map((skill, idx) => (
-                            <div key={idx} className='flex items-center justify-start gap-2'>
-                                <span className='text-xl text-gray-500'>{skill.icon}</span>
-                                <span className='text-sm font-bold text-gray-500'>{skill.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* First Card */}
+                <Card variant="outlined" className='border-gray-300 w-full mx-auto'>
+                    <CardContent>
+                        <Typography variant="h6" component="h3" className='text-center font-bold text-gray-700 mb-5'>
+                            {info[0].title}
+                        </Typography>
+                        <div className='grid grid-cols-2 justify-center mt-5 gap-x-6 gap-y-4'>
+                            {info[0].content.map((skill, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    className='flex items-center justify-start gap-2'
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                >
+                                    <span className='text-xl text-gray-500'>{skill.icon}</span>
+                                    <span className='text-sm font-bold text-gray-500'>{skill.name}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
 
-               
-                <div className='border border-gray-300 w-full p-5 rounded-2xl shadow-md mx-auto'>
-                    <h3 className='text-center font-bold text-gray-700 mb-5'>{info[1].title}</h3>
-                    <div className='grid grid-cols-2 justify-center gap-x-6 gap-y-4 ml-9'>
-                        {info[1].content.map((skill, idx) => (
-                            <div key={idx} className='flex items-center justify-start gap-2'>
-                                <span className='text-xl text-gray-500'>{skill.icon}</span>
-                                <span className='text-sm font-bold text-gray-500'>{skill.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* Second Card */}
+                <Card variant="outlined" className='border-gray-300 w-full mx-auto'>
+                    <CardContent>
+                        <Typography variant="h6" component="h3" className='text-center font-bold text-gray-700 mb-5'>
+                            {info[1].title}
+                        </Typography>
+                        <div className='grid grid-cols-2 mt-5 justify-center gap-x-6 gap-y-4'>
+                            {info[1].content.map((skill, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    className='flex items-center justify-start gap-2'
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                >
+                                    <span className='text-xl text-gray-500'>{skill.icon}</span>
+                                    <span className='text-sm font-bold text-gray-500'>{skill.name}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
 
-               
-                <div className='border border-gray-300 w-full p-5 rounded-2xl shadow-md mx-auto md:col-span-2 md:row-span-2'>
-                    <h3 className='text-center font-bold text-gray-700 mb-5'>{info[2].title}</h3>
-                    <div className='grid grid-cols-2 justify-center gap-x-6 gap-y-4 ml-9'>
-                        {info[2].content.map((skill, idx) => (
-                            <div key={idx} className='flex items-center justify-start gap-2'>
-                                <span className='text-xl text-gray-500'>{skill.icon}</span>
-                                <span className='text-sm font-bold text-gray-500'>{skill.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* Third Card */}
+                <Card variant="outlined" className='border-gray-300 w-full mx-auto md:col-span-2 md:row-span-2'>
+                    <CardContent>
+                        <Typography variant="h6" component="h3" className='text-center font-bold text-gray-700 mb-5'>
+                            {info[2].title}
+                        </Typography>
+                        <div className='grid grid-cols-2 mt-5 justify-center gap-x-6 gap-y-4'>
+                            {info[2].content.map((skill, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    className='flex items-center justify-start gap-2'
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                >
+                                    <span className='text-xl text-gray-500'>{skill.icon}</span>
+                                    <span className='text-sm font-bold text-gray-500'>{skill.name}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );

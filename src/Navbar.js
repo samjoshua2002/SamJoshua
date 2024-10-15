@@ -1,14 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Links } from "./constants/contents";
-import { Details } from "./constants/contents";
-import { Home, User, Briefcase, Mail, Code, Package } from "lucide-react"; // Corrected the icon for Briefcase
+import { Details, Links } from "./constants/contents"; // Assume you have these defined in your project
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { Home, User, Briefcase, Mail, Code } from "lucide-react"; // Icons
+import { motion } from "framer-motion"; // Import Framer Motion
 
 export default function Navbar() {
+  const [value, setValue] = useState(0); // Track selected bottom nav
+  const [showNavbar, setShowNavbar] = useState(true); // Toggle navbar visibility
+  let lastScrollTop = 0;
+
+  // Hide navbar on scroll down and show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        setShowNavbar(false); // Hide when scrolling down
+      } else {
+        setShowNavbar(true); // Show when scrolling up
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Cleanup
+    };
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative" style={{ WebkitTapHighlightColor: "transparent" }}> {/* Disable mobile blue tap highlight */}
       {/* Top Navigation Bar */}
-      <nav className="bg-slate-100 top-0 left-0 w-full cursor-pointer z-50">
+      <motion.nav
+        className="bg-slate-100 top-0 left-0 w-full cursor-pointer z-50"
+        initial={{ y: -100 }} // Start off-screen upwards
+        animate={{ y: showNavbar ? 0 : -100 }} // Animate in and out based on scroll
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        style={{ WebkitTapHighlightColor: "transparent" }} // Disable blue highlight
+      >
         <div className="lg:px-10 py-4 ml-10 mr-10 flex justify-between items-center">
           <div className="text-slate-900 text-2xl lg:text-3xl font-semibold">
             {Details.name}
@@ -30,47 +60,59 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Bottom Navigation Bar for Mobile Devices */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white md:hidden shadow-md rounded-t-lg z-50">
-        <ul className="flex justify-around py-2">
+      <motion.div
+        className="fixed bottom-0 left-0 right-0 bg-white shadow-md z-50 md:hidden"
+        initial={{ y: 100 }} // Start off-screen
+        animate={{ y: showNavbar ? 0 : 100 }} // Animate based on scroll state
+        transition={{ type: "spring", stiffness: 100, damping: 20 }} // Smooth spring animation
+        style={{ WebkitTapHighlightColor: "transparent" }} // Disable mobile blue highlight
+      >
+        <BottomNavigation
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          showLabels
+          className="bg-white text-black"
+        >
           {Links.map((link, index) => (
-            <li key={index}>
-              <Link
-                to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-70}
-                className="flex flex-col items-center text-slate-900 hover:text-slate-950"
-              >
-                {getIcon(link.name)}
-                <span className="text-xs mt-1">{link.name}</span>
-              </Link>
-            </li>
+            <BottomNavigationAction
+              key={index}
+              label={link.name}
+              icon={getIcon(link.name)} // No badge for bottom nav
+              component={Link}
+              to={link.to}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              style={{ 
+                color: value === index ? "black" : "gray" // Black when active, gray when inactive
+              }}
+            />
           ))}
-        </ul>
-      </div>
+        </BottomNavigation>
+      </motion.div>
     </div>
   );
 }
 
 // Function to get the appropriate icon based on the link name
 function getIcon(name) {
-  console.log("Link name:", name); // Log to see the actual link name
   switch (name.toLowerCase()) {
-    case 'home':
-      return <Home className="h-6 w-6" />; // Home icon
-    case 'about':
-      return <User className="h-6 w-6" />; // About (User) icon
-    case 'projects':
-      return <Briefcase className="h-6 w-6" />; // Projects icon (Briefcase)
-    case 'skills':
-      return <Code className="h-6 w-6" />; // Skills icon (Code)
-    case 'contact':
-      return <Mail className="h-6 w-6" />; // Contact (Mail) icon
+    case "home":
+      return <Home className="h-6 w-6" />;
+    case "about":
+      return <User className="h-6 w-6" />;
+    case "projects":
+      return <Briefcase className="h-6 w-6" />;
+    case "skills":
+      return <Code className="h-6 w-6" />;
+    case "contact":
+      return <Mail className="h-6 w-6" />;
     default:
-      console.warn("No matching icon found for:", name); // Warn when there is no match
-      return <Home className="h-6 w-6" />; // Default to Home icon
+      return <Home className="h-6 w-6" />;
   }
 }
