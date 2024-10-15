@@ -2,6 +2,11 @@ import { SiLeetcode, SiMysql, SiSpring, SiPostman } from 'react-icons/si';
 import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt,FaLinkedin, FaGithub  } from 'react-icons/fa';
 
 
+import { DiFlutter } from 'react-icons/di'; // Import Flutter icon
+import { SiPython } from 'react-icons/si';   // Import Python icon
+import { DiDart } from 'react-icons/di';      // Import Dart icon
+import { SiC } from 'react-icons/si';          // Import C icon
+
 export const Links = [
   { name: "Home", to: 'home' },
   { name: "About", to: 'about' },
@@ -60,16 +65,14 @@ export const Links = [
 ];
 export const info = [
   {
-      title: 'Languages',
-      content: [
-          { icon: <FaHtml5 />, name: 'HTML' },
-          { icon: <FaCss3Alt />, name: 'CSS' },
-          { icon: <FaJs />, name: 'JavaScript' },
-         
-          { icon: <FaJava />, name: 'Java' },
-          { icon: <SiMysql />, name: 'MySQL' }
+    title: 'Tools',
+    content: [
+        { icon: <FaGitAlt />, name: 'Git' },
+        { icon: <FaGithub />, name: 'Github' },
+        { icon: <SiPostman />, name: 'Postman' },
         
-      ]
+    ]
+      
   },
   {
       title: 'Frameworks',
@@ -80,14 +83,18 @@ export const info = [
       ]
   },
   {
-      title: 'Tools',
-      content: [
-          { icon: <FaGitAlt />, name: 'Git' },
-          { icon: <FaGithub />, name: 'Github' },
-          { icon: <SiPostman />, name: 'Postman' },
-          
-      ]
-  }
+    title: 'Languages',
+    content: [
+      { icon: <FaHtml5 />, name: 'HTML' },
+      { icon: <FaCss3Alt />, name: 'CSS' },
+      { icon: <FaJs />, name: 'JavaScript' },
+      { icon: <FaJava />, name: 'Java' },
+      { icon: <SiMysql />, name: 'MySQL' },
+      
+      { icon: <SiPython />, name: 'Python' },   // Added Python
+    
+    ],
+  },
 ];
 export const cardData = [
   {
