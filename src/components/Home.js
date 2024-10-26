@@ -119,14 +119,16 @@ function Home() {
             <p className="mt-4">{Details.quotes}</p>
 
             <a
-              href="/Sam.pdf" // Correct path for a file in the 'public' folder
-              target="_blank" // Opens the file in a new tab (optional, not necessary for download)
-              rel="noopener noreferrer" // Security feature when using target="_blank"
-              download // This ensures that the file is downloaded instead of opened
+              href="\Sam.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Sam_Joshua_Resume.pdf" // Custom download name
               className="flex items-center gap-2 text-lg border border-black p-3 rounded-2xl mt-8 bg-black text-white"
             >
               Download Resume <IoDocumentTextOutline />
             </a>
+
+
           </div>
         </div>
       </motion.div>
