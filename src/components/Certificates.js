@@ -13,7 +13,7 @@ function Certificates() {
         "image": "https://cdn.dribbble.com/users/1997192/screenshots/15359806/dribbble_final_post.png?compress=1&resize=400x300",
         "title": "Nike Website Clone",
         "content": "The Nike Website Clone is a full-stack application that replicates the essential features of the Nike online store. Built using React and Node.js, it provides a seamless shopping experience with product browsing, cart functionality, and secure checkout.",
-        "technologies": ["HTML", "JavaScript", "React", "Node.js", "CSS"], // Change to array
+        "technologies": ["HTML", "JavaScript", "React", "Node.js", "CSS"],
         "links": [
           {
             "icon": <FaGithub />,
@@ -49,79 +49,78 @@ function Certificates() {
       }
     ];
 
-    const filteredCards = select === 'All'
-      ? cards
-      : cards.filter(card => card.category === select.toLowerCase());
-
+    
     return (
       <div className="max-w-screen-lg mx-auto p-5">
-        {/* Section title */}
-        <div className="text-center mb-5">
+      {/* Section title */}
+      <div className="text-center mb-5">
           <div className="text-3xl font-bold">My Portfolio</div>
           <div className="text-gray-500 text-md">Recent Works</div>
-        </div>
-
-        {/* Filter buttons */}
-        <div className="flex w-full gap-4 items-center justify-center text-center">
-          <button
-            onClick={() => setSelect('All')}
-            className={`p-2 size-md rounded-full w-24 ${select === 'All' ? 'bg-gray-900 text-white' : 'bg-gray-400 text-gray-100'}`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setSelect('Individual')}
-            className={`p-2 size-md rounded-full w-24 ${select === 'Individual' ? 'bg-gray-900 text-white' : 'bg-gray-400 text-gray-100'}`}
-          >
-            Individual
-          </button>
-          <button
-            onClick={() => setSelect('Group')}
-            className={`p-2 size-md rounded-full w-24 ${select === 'Group' ? 'bg-gray-900 text-white' : 'bg-gray-400 text-gray-100'}`}
-          >
-            Group
-          </button>
-        </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          {filteredCards.map((card) => (
-            <div key={card.id} className="border border-white p-2 rounded-3xl shadow-md">
-              <div className="p-5 rounded-lg flex flex-col items-start">
-                {/* Card image */}
-                <img
-                  src={card.image}
-                  className="w-full h-48 rounded-2xl mb-2"
-                  alt={card.title}
-                />
-                {/* Card header */}
-                <h2 className="text-black text-xl font-semibold mb-1">
-                  {card.title}
-                </h2>
-                {/* Card content */}
-                <p className="text-justify text-gray-600 h-36 mb-3">
-                  {card.content}
-                </p>
-                {/* Card technologies */}
-                <div className="flex flex-wrap mt-4">
-                  {card.technologies.map((tech, index) => (
-                    <Badge key={index} technology={tech} />
-                  ))}
-                </div>
-                {/* Card links */}
-                <div className="flex gap-6 mt-4">
-                  {card.links.map((link, index) => (
-                    <a key={index} href={link.link} className="flex items-center gap-2 text-md">
-                      {link.icon} {link.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-    )
+
+      {/* Filter buttons */}
+      <div className="flex w-full gap-6 items-center justify-center text-center">
+          <button
+              onClick={() => setSelect('All')}
+              className={`p-2 rounded-full w-24 ${select === 'All' ? 'bg-gray-900 text-white' : 'bg-gray-400 text-gray-100'}`}
+          >
+              All
+          </button>
+          <button
+              onClick={() => setSelect('Individual')}
+              className={`p-2 size-md rounded-full w-24 ${select === 'Individual' ? 'bg-gray-900 text-white' : 'bg-gray-400 text-gray-100'}`}
+          >
+              Individual
+          </button>
+          <button
+              onClick={() => setSelect('Group')}
+              className={`p-2 size-md rounded-full w-24 ${select === 'Group' ? 'bg-gray-900 text-white' : 'bg-gray-400 text-gray-100'}`}
+          >
+              Group
+          </button>
+      </div>
+
+      {/* Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          {cards.map((card) => (
+              (select === 'All' || card.category.toLowerCase() === select.toLowerCase()) && (
+                  <div key={card.id} className="border border-white p-2 rounded-3xl shadow-md">
+                      <div className="p-5 rounded-lg flex flex-col items-start">
+                          {/* Card image */}
+                          <img
+                              src={card.image}
+                              className="w-full h-48 rounded-2xl mb-2"
+                              alt={card.title}
+                          />
+                          {/* Card header */}
+                          <h2 className="text-black text-xl font-semibold mb-1">
+                              {card.title}
+                          </h2>
+                          {/* Card content */}
+                          <p className="text-justify text-gray-600 h-36 mb-3">
+                              {card.content}
+                          </p>
+                          {/* Card technologies */}
+                          <div className="flex flex-wrap mt-4">
+                              {card.technologies.map((tech, index) => (
+                                  <Badge key={index} technology={tech} />
+                              ))}
+                          </div>
+                          {/* Card links */}
+                          <div className="flex gap-6 mt-4">
+                              {card.links.map((s, index) => (
+                                  <a key={index} href={s.link} className="flex items-center gap-2 text-md">
+                                      {s.icon} {s.name}
+                                  </a>
+                              ))}
+                          </div>
+                      </div>
+                  </div>
+              )
+          ))}
+      </div>
+  </div>
+);
 }
 
 export default Certificates;

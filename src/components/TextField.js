@@ -18,7 +18,7 @@ export default function CustomTextField({ id, label, value, onChange, multiline,
         multiline={multiline}
         rows={rows}
         sx={{ 
-          borderRadius: '8px', // Adjust the border radius as needed
+          borderRadius: '8px', // Rounded corners
           '& .MuiOutlinedInput-root': {
             borderRadius: '8px', // Apply border radius to the outlined input
             '& fieldset': {

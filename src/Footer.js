@@ -27,7 +27,7 @@ const sections = [
             <li key={index}>
               <a
                 href={social.link}
-                aria-label={social.name}
+                
                 className="text-black text-lg hover:text-gray-600"
               >
                 {social.icon}
@@ -35,7 +35,7 @@ const sections = [
             </li>
           ))}
         </ul>
-        <div className=" border-gray-300 my-4"></div>
+        <div className=" my-4"></div>
         <div className="mt-4">
           <p className="text-xs mb-1">Built with React JS & Tailwind CSS</p>
           <p className="text-xs mb-1">Hosted on Vercel</p>
