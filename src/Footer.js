@@ -1,27 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { Box, Typography, List, ListItem, IconButton, Container, Divider } from '@mui/material';
-import { styled } from '@mui/system';
 import { Details, socialLinks } from './constants/contents';
-
-// Styled Link for scroll behavior
-const StyledLink = styled(Link)({
-  cursor: 'pointer',
-  fontSize: '0.9rem', // Slightly smaller font size
-  padding: '0.25rem', // Reduced padding
-  '&:hover': {
-    textDecoration: 'underline',
-  },
-});
-
-// Styled IconButton for black icons
-const StyledIconButton = styled(IconButton)({
-  color: '#000', // Black icons
-  fontSize: '1.25rem', // Smaller icons
-  '&:hover': {
-    color: '#4B5563', // Darker gray on hover
-  },
-});
 
 const sections = [
   { name: "About", to: "about" },
@@ -29,56 +8,42 @@ const sections = [
   { name: "Skills", to: "skills" }
 ];
 
-export default function Footer() {
+ function Footer() {
   return (
-    <Box component="footer" sx={{ bgcolor: 'grey.50', textAlign: 'center', py: 3, borderTop: 1, borderColor: 'grey.300' }}>
-      <Container maxWidth="sm">
-        <Typography variant="h5" component="h2" gutterBottom sx={{ color: 'slategray.900', fontWeight: 'bold', mb: 1 }}>
-          {Details.name}
-        </Typography>
-        <List sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 0 }}>
-          {sections.map((section, index) => (
-            <ListItem key={index} sx={{ width: 'auto', textAlign: 'center', padding: 0 }}>
-              <StyledLink
-                to={section.to}
-                smooth={true}
-                duration={500}
-                offset={-70}
-              >
-                {section.name}
-              </StyledLink>
-            </ListItem>
+    <footer className="bg-gray-50 text-center py-6 border-t border-gray-300">
+      <div className="max-w-xl mx-auto">
+        <h2 className="text-xl font-bold text-slate-900 mb-2">{Details.name}</h2>
+        
+        <ul className='flex justify-center gap-4 mt-1 mb-4'>
+          {sections.map((section,i)=>(
+            <li key={i}>
+              <Link to={section.to} smooth={true} className='text-black text-sm hover:text-gray-600'>{section.name}</Link>
+            </li>
           ))}
-        </List>
-        <List sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 2 }}>
+
+        </ul>
+        <ul className="flex justify-center gap-4 mb-4">
           {socialLinks.map((social, index) => (
-            <ListItem key={index} sx={{ width: 'auto', textAlign: 'center', padding: 0 }}>
-              <StyledIconButton
-                component="a"
+            <li key={index}>
+              <a
                 href={social.link}
                 aria-label={social.name}
+                className="text-black text-lg hover:text-gray-600"
               >
                 {social.icon}
-              </StyledIconButton>
-            </ListItem>
+              </a>
+            </li>
           ))}
-        </List>
-        <Divider sx={{ my: 1 }} /> {/* Reduced space around the divider */}
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="caption" display="block" gutterBottom>
-            Built with React JS & Material-UI
-          </Typography>
-          <Typography variant="caption" display="block" gutterBottom>
-            Hosted on Vercel
-          </Typography>
-          <Typography variant="caption" display="block">
-            All Rights Reserved. ©
-          </Typography>
-          <List sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 2 }}>
-
-          </List>
-        </Box>
-      </Container>
-    </Box>
+        </ul>
+        <div className=" border-gray-300 my-4"></div>
+        <div className="mt-4">
+          <p className="text-xs mb-1">Built with React JS & Tailwind CSS</p>
+          <p className="text-xs mb-1">Hosted on Vercel</p>
+          <p className="text-xs">All Rights Reserved. ©</p>
+        </div>
+      </div>
+    </footer>
   );
 }
+
+export default Footer;
