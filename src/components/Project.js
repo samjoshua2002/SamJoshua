@@ -1,68 +1,49 @@
 import React from 'react';
-import { GoLinkExternal } from "react-icons/go";
 import { cardData } from '../constants/contents';
-import { Box, Typography, Card, CardContent, CardMedia, Button, Grid } from '@mui/material';
 
 function Project() {
-
-  
   return (
-    <Box className="max-w-screen-lg mx-auto p-5">
-      
-      <Box textAlign="center" mb={5}>
-        <Typography variant="h4" component="h4" fontWeight="bold">
-          Certifications
-        </Typography>
-        <Typography variant="subtitle1" color="textSecondary" mt={2}>
-          Credentials & Achievements
-        </Typography>
-      </Box>
+    <div className="max-w-screen-lg mx-auto p-8">
+      {/* Header Section */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold">Certifications</h2>
+        <p className="text-gray-600 mt-2">Credentials & Achievements</p>
+      </div>
 
-      {/* Card list */}
-      <Grid container spacing={4}>
+      {/* Card List */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {cardData.map((card, index) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Card variant="outlined" sx={{ border: '1px solid white', borderRadius: '16px' }}>
-              <CardMedia
-                component="img"
-                src={card.imgSrc}
-                alt={card.imgAlt}
-                sx={{ bgcolor: 'black', width: 100, height: 100, marginBottom: 2, marginLeft:2, borderRadius: '12px' }}
-              />
+          <div
+            key={index}
+            className="border border-gray-300 rounded-lg shadow-sm p-4 bg-white"
+          >
+            {/* Card Media */}
+            <img
+              src={card.imgSrc}
+              alt={card.imgAlt}
+              className="w-24 h-24 bg-black rounded-lg mb-4"
+            />
 
-              <CardContent>
-                {/* Certificate Header */}
-                <Typography variant="h6" component="h2" fontWeight="bold" gutterBottom>
-                  {card.title}
-                </Typography>
+            {/* Card Content */}
+            <h3 className="text-lg font-bold mb-2">{card.title}</h3>
+            <p className="text-gray-600 mb-2">{card.badge}</p>
+            <p className="text-gray-500 text-sm mb-4 line-clamp-3">
+              {card.content}
+            </p>
 
-                {/* Badge */}
-                <Typography variant="body1" color="textSecondary" gutterBottom>
-                  {card.badge}
-                </Typography>
-
-                {/* Content */}
-                <Typography variant="body2" color="textSecondary" sx={{ height: '96px', overflow: 'hidden' }}>
-                  {card.content}
-                </Typography>
-
-                {/* Certificate Link */}
-                <Button
-                  href={card.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  endIcon={<GoLinkExternal />}
-                  variant="text"
-                  sx={{ color: 'black', marginTop: 2, '&:hover': { color: 'gray' } }}
-                >
-                  {card.linkText}
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
+            {/* Certificate Link */}
+            <a
+              href={card.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-700 text-sm"
+            >
+              {card.linkText} →
+            </a>
+          </div>
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   );
 }
 
