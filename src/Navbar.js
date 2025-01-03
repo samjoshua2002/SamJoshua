@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Details, Links } from "./constants/contents"; // Assume you have these defined in your project
+import { Details, Links } from "./constants/contents";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { Home, User, Briefcase, Mail, Code } from "lucide-react"; // Icons
-import { motion } from "framer-motion"; // Import Framer Motion
+import { Home, User, Briefcase, Mail, Code } from "lucide-react"; 
+import { motion } from "framer-motion"; 
 
 export default function Navbar() {
-  const [value, setValue] = useState(0); // Track selected bottom nav
-  const [showNavbar, setShowNavbar] = useState(true); // Toggle navbar visibility
+  const [value, setValue] = useState(0); 
+  const [showNavbar, setShowNavbar] = useState(true);
   let lastScrollTop = 0;
 
   // Hide navbar on scroll down and show on scroll up

@@ -15,13 +15,13 @@ function App() {
     <div>
       <Navbar />
       <div>
-        <section id="home" className="py-16">
+        <section id="home" >
           <Home />
         </section>
         <section id="about" className="py-20">
           <About />
         </section>
-        <section id="skills" className="py-20">
+        <section id="skills" className="py-28">
           <Skills />
         </section>
         <section id="timeline" className="py-20">
@@ -36,12 +36,12 @@ function App() {
         <section id="testimonial" className="py-20">
           <Testimonial />
         </section>
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-28">
           <Contact />
         </section>
       </div>
-
-      <Footer />
+      <div className='py-10'> <Footer /></div>
+     
     </div>
   );
 }
