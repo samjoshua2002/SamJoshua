@@ -26,7 +26,7 @@ function Contact() {
         }
 
         try {
-            const response = await axios.post('http://localhost:8081/contact', {
+            const response = await axios.post('https://emailservice-1-njl6.onrender.com/contact', {
                 name: name.trim(),
                 email: email.trim(),
                 message: message.trim(),
