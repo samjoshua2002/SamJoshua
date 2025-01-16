@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import CustomTextField from './TextField'; // Adjust the path if needed
 import { IoSend } from "react-icons/io5";
 import { MdMailOutline } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
+
 function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -13,21 +15,33 @@ function Contact() {
         { icons: <MdMailOutline />, name: "LinkedIn", sub: "Sam Joshua P", content: "Let's Connect", link: "https://www.linkedin.com/in/sam-joshua-03082002p/" }
     ];
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name || !email || !message) {
             alert('Please fill out all fields.');
             return;
         }
 
-        // Handle form submission logic here
-        console.log('Form submitted:', { name, email, message });
-
-        // Reset the form fields
-        setName('');
-        setEmail('');
-        setMessage('');
-    };
+        try {
+            const response = await axios.post('http://localhost:8081/contact', {
+                name: name.trim(),
+                email: email.trim(),
+                message: message.trim(),
+            }, {
+                headers: { 'Content-Type': 'application/json' },
+            });
+        
+            if (response.status === 200) {
+                alert('Your message has been sent successfully!');
+                setName('');
+                setEmail('');
+                setMessage('');
+            }
+        } catch (error) {
+            console.error('Error submitting the form:', error.response || error);
+            alert(error.response?.data || 'Failed to send your message. Please try again later.');
+        }
+    }        
 
     return (
         <div className='max-w-4xl mx-auto p-5'>
@@ -38,7 +52,7 @@ function Contact() {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-10'>
                 <div>
                     <h2 className='text-2xl font-semibold mb-4 text-center'>Talk To Me</h2>
-                    <ul className=' items-center space-y-4 w-80 mx-auto'>
+                    <ul className='items-center space-y-4 w-80 mx-auto'>
                         {Details.map((detail, index) => (
                             <li key={index} className='flex flex-col items-center text-center border border-gray-300 w-full md:w-80 p-4 rounded-lg'>
                                 <p className='text-2xl mb-2'>{detail.icons}</p>
@@ -87,12 +101,8 @@ function Contact() {
                         >
                             Submit <IoSend className='ml-2' />
                         </button>
-
-
                     </form>
                 </div>
-
-
             </div>
         </div>
     );
