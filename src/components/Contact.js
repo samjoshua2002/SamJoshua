@@ -4,6 +4,9 @@ import CustomTextField from './TextField'; // Adjust the path if needed
 import { IoSend } from "react-icons/io5";
 import { MdMailOutline } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Contact() {
     const [name, setName] = useState('');
@@ -18,7 +21,7 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name || !email || !message) {
-            alert('Please fill out all fields.');
+            toast.info("Fill the Details")
             return;
         }
 
@@ -32,19 +35,20 @@ function Contact() {
             });
         
             if (response.status === 200) {
-                alert('Your message has been sent successfully!');
+                toast.success('Message sent successfully!');
                 setName('');
                 setEmail('');
                 setMessage('');
             }
         } catch (error) {
             console.error('Error submitting the form:', error.response || error);
-            alert(error.response?.data || 'Failed to send your message. Please try again later.');
+            toast.error(error.response?.data || 'Failed to send your message. Please try again later.');
         }
     }        
 
     return (
         <div className='max-w-4xl mx-auto p-5'>
+            <ToastContainer/>
             <div className='text-center'>
                 <h1 className='text-3xl font-semibold'>Contact Me</h1>
                 <p className='text-sm pt-2'>Get In Touch</p>
