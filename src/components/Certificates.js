@@ -53,7 +53,7 @@ function Certificates() {
         "image": "https://cdn.dribbble.com/userupload/3361221/file/original-1a631dceb9ecafec254c29be25d5225d.jpg?resize=1024x768&vertical=center",
         "title": "Trendix",
         "content": "Trendix is a full-stack e-commerce platform that provides a seamless shopping experience. It is built using React for the front-end, Tailwind CSS for styling, and Spring Boot for the back-end, ensuring a robust and scalable architecture.",
-        "technologies": ["React", "Tailwind CSS", "Spring Boot", "Docker", "Material UI"],
+        "technologies": ["React", "Tailwind CSS", "Spring Boot", "Material UI"],
         "links": [
           {
             "icon": <FaGithub />,
