@@ -1,6 +1,32 @@
-import { SiLeetcode, SiMysql, SiSpring, SiPostman } from 'react-icons/si';
-import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaReact, FaNodeJs, FaGitAlt,FaLinkedin, FaGithub  } from 'react-icons/fa';
-import { SiPython } from 'react-icons/si'; 
+import { 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaJs, 
+  FaJava, 
+  FaReact, 
+  FaNodeJs, 
+  FaGitAlt, 
+  FaGithub, 
+  FaLinkedin, 
+  FaBootstrap
+} from 'react-icons/fa';
+
+import { 
+  SiLeetcode, 
+  SiMysql, 
+  SiSpring, 
+  SiPostman, 
+  SiPython, 
+  SiNextdotjs, 
+  SiMongodb, 
+  SiFigma, 
+  SiGooglecloud, 
+  SiTypescript,
+  SiTailwindcss
+} from 'react-icons/si';
+
+import { FaLinux } from 'react-icons/fa6';
+import { PiPlugsConnectedDuotone } from 'react-icons/pi';
 
 
 export const Links = [
@@ -20,7 +46,8 @@ export const Links = [
   };
 
   export const icons = [
-    { icon: <FaLinkedin />, key: 'linkedin', link: 'https://www.linkedin.com/in/sam-joshua-03082002p/' },
+    { icon: <FaLinkedin />, key: 'linkedin', link: '#' },
+    // { icon: <FaLinkedin />, key: 'linkedin', link: 'https://www.linkedin.com/in/sam-joshua-03082002p/' },
     { icon: <SiLeetcode />, key: 'leetcode', link: 'https://www.leetcode.com' },
     { icon: <FaGithub />, key: 'github', link: 'https://github.com/samjoshua2002' }
   ];
@@ -59,24 +86,30 @@ export const Links = [
         "year": "July 2024 - Sept 2024"
     },
 ];
+
 export const info = [
   {
     title: 'Tools',
     content: [
-        { icon: <FaGitAlt />, name: 'Git' },
-        { icon: <FaGithub />, name: 'Github' },
-        { icon: <SiPostman />, name: 'Postman' },
-        
-    ]
-      
+      { icon: <FaGitAlt />, name: 'Git' },
+      { icon: <FaGithub />, name: 'Github' },
+      { icon: <SiPostman />, name: 'Postman' },
+      { icon: <SiFigma />, name: 'Figma' },
+      { icon: <FaLinux />, name: 'Linux (VM)' },
+      { icon: <PiPlugsConnectedDuotone />, name: 'PuTTY & WinSCP' },
+    ],
   },
   {
-      title: 'Frameworks',
-      content: [
-          { icon: <SiSpring/>, name: 'Spring' },
-          { icon: <FaReact />, name: 'React.js' },
-          { icon: <FaNodeJs />, name: 'Node.js' }
-      ]
+    title: 'Frameworks',
+    content: [
+      { icon: <SiSpring />, name: 'Spring' },
+      { icon: <FaReact />, name: 'React.js' },
+      { icon: <SiNextdotjs />, name: 'Next.js' },
+      { icon: <FaNodeJs />, name: 'Node.js' },
+   
+      { icon: <FaBootstrap/>, name: 'Bootstrap' },
+      { icon: <SiTailwindcss />, name: 'Tailwind' },
+    ],
   },
   {
     title: 'Languages',
@@ -84,11 +117,18 @@ export const info = [
       { icon: <FaHtml5 />, name: 'HTML' },
       { icon: <FaCss3Alt />, name: 'CSS' },
       { icon: <FaJs />, name: 'JavaScript' },
+      { icon: < SiTypescript/>, name: 'Typescript' },
       { icon: <FaJava />, name: 'Java' },
       { icon: <SiMysql />, name: 'MySQL' },
-      
-      { icon: <SiPython />, name: 'Python' },   // Added Python
-    
+      { icon: <SiPython />, name: 'Python' },
+      { icon: <SiMongodb />, name: 'MongoDB' },
+    ],
+  },
+  {
+    title: 'Cloud & Deployment',
+    content: [
+      { icon: <SiGooglecloud />, name: 'Google Cloud' },
+      { icon: <FaReact />, name: 'Vercel' },
     ],
   },
 ];

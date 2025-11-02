@@ -21,10 +21,10 @@ function App() {
         <section id="about" className="py-20">
           <About />
         </section>
-        <section id="skills" className="py-28">
+        <section id="skills" className="pt-28">
           <Skills />
         </section>
-        <section id="timeline" className="py-20">
+        <section id="timeline" className="pb-20">
           <Timeline />
         </section>
         <section id="project" className="py-20">
