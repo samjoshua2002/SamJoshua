@@ -21,9 +21,9 @@ function App() {
         <section id="about" className="py-20">
           <About />
         </section>
-        <section id="skills" className="pt-28">
+        {/* <section id="skills" className="pt-28">
           <Skills />
-        </section>
+        </section> */}
         <section id="timeline" className="pb-20">
           <Timeline />
         </section>
